@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEmailAndPassword } from '../../utils/firebase/firebase.utils'
 import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 
 import './sign-in-form.styles.scss';
@@ -69,8 +69,8 @@ const SignInForm = () => {
                     value={password} 
                 />
                 <div className='buttons-container'>
-                    <Button buttonType='invertet' type="submit">Sign In</Button>
-                    <Button buttonType='google' type='button' onClick={signInWithGoogle}>Google sign in</Button>
+                    <Button buttonType={BUTTON_TYPE_CLASSES.inverted} type="submit">Sign In</Button>
+                    <Button buttonType={BUTTON_TYPE_CLASSES.google} type='button' onClick={signInWithGoogle}>Google sign in</Button>
                 </div>
             </form>
         </div>
