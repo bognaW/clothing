@@ -1,12 +1,3 @@
-/*
-default
-
-inverted
-
-google sign
-
-*/
-
 import {
     BaseButton,
     GoogleSignInButton,
