@@ -3,12 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { setCurrentUser } from "./store/user/user.action";
-
-import { 
-  getCurrentUser,
-  createUserDocumentFromAuth, 
-  onAuthStateChangedListener } from './utils/firebase/firebase.utils';
+import { checkUserSession } from "./store/user/user.action";
 
 import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
@@ -27,8 +22,8 @@ const App = () => {
     //     dispatch(setCurrentUser(user));
     // });
     // return unsubscribe;
-    getCurrentUser().then((user) => console.log(user));
-  }, [dispatch]);
+    dispatch(checkUserSession());
+  }, []);
 
   return (
     <Routes>

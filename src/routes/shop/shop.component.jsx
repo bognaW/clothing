@@ -13,7 +13,7 @@ const Shop = () => {
 
     useEffect(() => {
         dispatch(fetchCategoriesStarat());
-    }, []);
+    }, [dispatch]);
 
     return (
         <Routes>
